@@ -21,11 +21,14 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+// Host/port configuráveis via ENV (útil em Codespaces/containers)
+var host = process.env.HOST || '0.0.0.0';
+
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, host);
 server.on('error', onError);
 server.on('listening', onListening);
 
@@ -86,5 +89,7 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
+  var displayHost = host === '0.0.0.0' ? 'localhost or 0.0.0.0' : host;
+  console.log('Listening on ' + displayHost + ':' + addr.port);
   debug('Listening on ' + bind);
 }

@@ -2,18 +2,46 @@
 <html>
   <head>
     <title><%= turma %></title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= turma %></h1>
-    <p>Seja bem-vind@ à <%= turma %></p><br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">Biblioteca</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/meu-endpoint">End-Point</a></li>
+            <li class="nav-item"><a class="nav-link" href="/agora">Hora agora</a></li>
+            <li class="nav-item"><a class="nav-link" href="/livros/listar">Listar livros</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <p>Cumprimente o Barney!</p>
+    <main class="container main-container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-6">
+          <h1 class="display-5 mb-2"><%= turma %></h1>
+          <p class="lead mb-3">Seja bem-vind@ à <%= turma %></p>
+          <p class="mb-3">Cumprimente o Barney!</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-primary btn-lg" href="/meu-endpoint">End-Point</a>
+            <a class="btn btn-primary btn-lg" href="/agora">Hora agora</a>
+            <a class="btn btn-primary btn-lg" href="/livros/listar">Listar livros</a>
+          </div>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-center">
+          <img src="https://wallpapers.com/images/hd/barney-pictures-uxbxl1zx3c02i476.jpg" class="img-fluid hero-img rounded" alt="Barney">
+        </div>
+      </div>
+    </main>
 
-    <img src="https://wallpapers.com/images/hd/barney-pictures-uxbxl1zx3c02i476.jpg" style="height: 300px; width: auto;">
-    
-    <br><br>
-    <a href="http://localhost:3000/meu-endpoint"><button>End-Point</button></a>
-    <a href="http://localhost:3000/agora"><button>Hora agora</button></a>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -52,7 +52,7 @@ router.get('/livros/listar', function(req, res) {
     if (erro){
       res.send(erro);
     }
-    res.send(listagem);
+    res.render('livros-lista', {resultado: listagem});
   });
 
 });

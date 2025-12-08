@@ -40,6 +40,7 @@ res.send(msg);
 // localhost:3000/calcular-imc/?peso=87&estatura=1.82
 });
 
+
 router.get('/livros/listar', function(req, res) {
 
   var cmd = `
@@ -57,6 +58,10 @@ router.get('/livros/listar', function(req, res) {
 
 });
 
+router.get('/livros/cadastrar', function(req, res) {
 
+  res.render('livros-add');
+
+});
 
 module.exports = router;

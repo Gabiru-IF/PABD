@@ -40,28 +40,4 @@ res.send(msg);
 // localhost:3000/calcular-imc/?peso=87&estatura=1.82
 });
 
-
-router.get('/livros/listar', function(req, res) {
-
-  var cmd = `
-  SELECT id_livro, titulo, ano, nome
-	  FROM tb_livro INNER JOIN tb_editora
-	    ON tb_editora.id_editora = tb_livro.id_editora
-  ORDER BY titulo;`
-
-  db.query(cmd, [], function(erro, listagem){
-    if (erro){
-      res.send(erro);
-    }
-    res.render('livros-lista', {resultado: listagem});
-  });
-
-});
-
-router.get('/livros/cadastrar', function(req, res) {
-
-  res.render('livros-add');
-
-});
-
 module.exports = router;
